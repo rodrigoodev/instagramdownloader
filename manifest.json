@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Instagram Downloader",
+    "version": "1.0",
+    "description": "Download Instagram photos and videos",
+    "background": {
+        "service_worker": "src/background.js"
+      },
+    "content_scripts": [
+        {
+            "matches": ["https://www.instagram.com/*"],
+            "js": [
+             "src/components/buttonDownload.js",
+             "src/main.js"
+            ]
+        }
+    ],
+    "permissions": [
+        "activeTab",
+        "storage"
+    ]
+}
